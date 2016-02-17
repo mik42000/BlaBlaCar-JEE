@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http:/www.w3.org/1999/xhtml"
+
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            
+                <h:outputLabel for="prenom">Prenom : </h:outputLabel>
+                <b:inputText id="prenom" value="#{UtilisateurManageBean.utilisateur.prenom}"></b:inputText>
+                <br/>
+                <h:outputLabel for="nom">Nom : </h:outputLabel>
+                <b:inputText id="nom" value="#{UtilisateurManageBean.utilisateur.nom}"></b:inputText>
+                <br/>
+                <h:outputLabel for="lieuDepart">Lieu de départ : </h:outputLabel>
+                <b:inputText id="lieuDepart" value="#{UtilisateurManageBean.trajet.lieuDepart}"></b:inputText>
+                <br/>
+                <h:outputLabel for="lieuArrivee">Lieu d'arrivée : </h:outputLabel>
+                <b:inputText id="lieuArrivee" value="#{UtilisateurManageBean.trajet.lieuArrivee}"></b:inputText>
+                <br/>
+                <h:outputLabel for="dateDepart">Date et horaire de départ : </h:outputLabel>
+                <b:inputText id="dateDepart"  value="#{UtilisateurManageBean.trajet.depart}">
+                   <f:convertDateTime pattern="yyyy-mm-dd"/>
+                </b:inputText>
+                <br/>
+                <h:outputLabel for="dateArrivee">Date et horaire d'arrivée : </h:outputLabel>
+                <b:inputText id="dateArrivee"  value="#{UtilisateurManageBean.trajet.arrivee}">
+                    <f:convertDateTime pattern="yyyy-mm-dd"/>
+                </b:inputText>
+                <br/>
+                <h:outputLabel for="prix">Prix : </h:outputLabel>
+                <b:inputText id="prix"  value="#{UtilisateurManageBean.trajet.prix}"></b:inputText>
+                <br/>
+                <h:outputLabel for="nbPlacesTotales">Nombre places totales: </h:outputLabel>
+                <b:inputText id="nbPlacesTotales" value="#{UtilisateurManageBean.trajet.nb_places_totales}"></b:inputText>
+                <br/>
+                <b:commandButton type="submit" action="#{UtilisateurManageBean.deposerTrajet()}" value="Ajouter ce trajet"></b:commandButton>
+            
+        </h:form>
+    </h:body>
+</html>
